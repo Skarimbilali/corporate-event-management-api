@@ -2,7 +2,8 @@
 
 **Project:** Corporate Event Management API  
 **Technology stack:** Python 3.11, FastAPI, PostgreSQL, asynchronous SQLAlchemy, Pydantic, asyncpg, pytest  
-**Assignment:** Corporate Event Management API (submission: 18 November 2026)
+**Assignment:** Corporate Event Management API (submission: 18 November 2026)  
+**Project repository:** https://github.com/Skarimbilali/corporate-event-management-api
 
 ## 1. Purpose of AI Assistance
 
@@ -69,7 +70,7 @@ This deletion policy is a project design decision, not a verbatim requirement fr
 
 ## 6. Testing and Verification Evidence
 
-The developer supplied a real Windows pytest execution log from Python 3.11 showing **30 tests passed with one non-failing deprecation warning**. Subsequent additional regression tests and a project revision were discussed; the current final result must be confirmed from a new local run.
+The developer supplied a real Windows pytest execution log from Python 3.11 showing **30 tests passed with one non-failing deprecation warning**. Further regression tests were added during subsequent project revisions. The developer was given the command to regenerate `pytest-results.txt`; the **current final count must be taken from that latest locally executed file**, rather than assuming earlier results describe the latest revision.
 
 To regenerate the submission evidence in the project root:
 
@@ -85,7 +86,7 @@ Testing topics include:
 - Pagination/date/title filtering (extended regression coverage).
 - Deletion with active registrations, expecting `409 Conflict` (extended regression coverage).
 
-**Evidence distinction:** Pytest tests use isolated test database fixtures; they do not by themselves prove production PostgreSQL connectivity or concurrent transaction behavior. Swagger screenshots were captured by the developer; actual files/screenshots should accompany the submission. A successful `python test_db.py` run should also be verified locally.
+**Evidence distinction:** Pytest tests use isolated test database fixtures; they do not by themselves prove production PostgreSQL connectivity or concurrent transaction behavior. Swagger screenshots were reported as captured by the developer; the actual screenshot files should accompany the submission. A successful `python test_db.py` run should also be verified locally.
 
 ## 7. Developer Contribution and Responsibility
 
@@ -106,6 +107,12 @@ Recommended supporting evidence: `pytest-results.txt`, Swagger screenshots, READ
 - A narrated slide/diagram video is supplemental and should not be misrepresented as a live Swagger/PostgreSQL screen recording.
 - This document records known assistance and verified information from the conversation; it is not a full transcript.
 
-## 10. Conclusion
+## 10. GitHub Publication and Remaining Evidence
+
+On 18 November 2026, the developer supplied the Git terminal output confirming a successful initial push to `main`, tracking `origin/main`, at https://github.com/Skarimbilali/corporate-event-management-api. This verifies the reported local push, not public visibility or the assignment's feature-branch/merge history requirements.
+
+The developer reported capturing Swagger UI screenshots. Submission should also include the actual complete assignment-related AI conversation history, the latest pytest result, and a genuine video recording showing the running application, PostgreSQL integration, and implemented API requests/responses. The narrated diagram-based explainer alone does not fulfill the live demonstration requirement.
+
+## 11. Conclusion
 
 AI assistance supported the implementation, troubleshooting, testing, and documentation of the Corporate Event Management API. The developer retained ownership of design choices and must independently verify final behavior, provide the actual AI history, and submit genuine test and demonstration evidence.

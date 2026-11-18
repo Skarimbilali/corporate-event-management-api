@@ -2,6 +2,10 @@
 
 A RESTful API built with FastAPI and PostgreSQL to manage corporate events and employee registrations.
 
+**GitHub repository:** https://github.com/Skarimbilali/corporate-event-management-api
+
+**Assignment:** Corporate Event Management API — 18 November 2026.
+
 ## Project Overview
 
 The Corporate Event Management API allows users to create, retrieve, update, and delete corporate events. Employees can register for events, view registrations, and cancel their registrations.
@@ -56,7 +60,7 @@ corporate-event-management-api/
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-github-repository-url>
+git clone https://github.com/Skarimbilali/corporate-event-management-api.git
 cd corporate-event-management-api
 ```
 
@@ -174,14 +178,14 @@ The foreign key constraint remains unchanged.
 | 201 | Resource created |
 | 204 | Resource deleted successfully |
 | 404 | Resource not found |
-| 409 | Conflict, duplicate registration or full capacity |
+| 409 | Conflict: duplicate registration, full capacity, or deletion blocked by active registrations |
 | 422 | Request validation error |
 
 ## Testing
 
-The API endpoints and business validations were manually tested using FastAPI Swagger UI.
+The developer has captured Swagger UI screenshots of API testing. Keep those actual screenshots as submission evidence; a README statement is not a substitute for the image files.
 
-Tested scenarios include event creation, retrieval, updating, deletion, duplicate registration prevention, capacity validation, and invalid input handling.
+Manual verification should include CRUD, registration and cancellation, duplicate registration prevention, capacity validation, validation errors, deletion with active registrations (`409`), and deletion without registrations (`204`).
 
 ## AI Usage Documentation
 
@@ -232,7 +236,7 @@ python -m pytest tests -v 2>&1 | Tee-Object -FilePath pytest-results.txt
 
 `tests/test_api.py` covers event CRUD, registrations, business rules, `404`, `409`, `422`, logging and database health-check behavior. `tests/test_bonus_regression.py` covers pagination, title/date filtering, query validation, and UTC normalization.
 
-**Test environment:** The automated tests use a fresh, disposable SQLite database through a test dependency override, not the production PostgreSQL database. Passing tests do not prove PostgreSQL connectivity or concurrency safety. The included `pytest-results.txt` is evidence of a previous local 30-test run; execute tests again after any changes to obtain current results.
+**Test environment:** The automated tests use a fresh, disposable SQLite database through a test dependency override, not the production PostgreSQL database. Passing tests do not prove PostgreSQL connectivity or concurrency safety. The previously supplied `pytest-results.txt` showed 30 passing tests. The extended suite has also been run during project preparation, but publish the **latest locally regenerated** result file after any changes. Never describe an earlier run as verification of later code.
 
 ## Manual PostgreSQL / Swagger Verification
 
@@ -256,6 +260,6 @@ Application logging is configured in `app/logging_config.py`. Uvicorn prints req
 
 ## Git and Submission Checklist
 
-The assignment requires a **public GitHub repository**, `main` stable branch, separate feature branches, meaningful commits, and completed work merged into `main`. These steps require your actual Git repository; a downloaded ZIP cannot demonstrate Git history.
+The project was successfully pushed to the `main` branch at https://github.com/Skarimbilali/corporate-event-management-api on 18 November 2026. The local Git output confirmed `main` tracks `origin/main` with a clean working tree. Confirm public visibility on GitHub. The assignment also grades **genuine feature branches, meaningful commits and merges**; an initial push alone does not demonstrate that history.
 
-Include the source files, this README, `requirements.txt`, `AI_USAGE.md`, screenshots of **real Swagger UI execution**, pytest evidence, and the mandatory demo video showing the running FastAPI service, PostgreSQL integration and all endpoints. A diagram-only narrated video does not substitute for a live demo. Share your actual AI prompts and chat history as required by the assignment. Frontend and JWT are optional bonus features; JWT is **not implemented** in this package.
+Include the source files, this README, `requirements.txt`, `AI_USAGE.md`, screenshots of **real Swagger UI execution**, pytest evidence, and the mandatory demo video showing the running FastAPI service, PostgreSQL integration and all endpoints. A diagram-only narrated video does not substitute for a live demo. Submit the complete genuine AI prompts/chat history alongside [AI_USAGE.md](AI_USAGE.md); redact credentials before sharing. Frontend and JWT are optional bonus features; JWT is **not implemented** in this package.
